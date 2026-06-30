@@ -1,0 +1,31 @@
+{
+  "name": "05-directremit-level-1-white-belt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
+    
+  },
+  "dependencies": {
+    "@creit.tech/stellar-wallets-kit": "latest",
+    "@stellar/freighter-api": "latest",
+    "@stellar/stellar-sdk": "latest",
+    "@vitejs/plugin-react": "latest",
+    "autoprefixer": "latest",
+    "framer-motion": "latest",
+    "postcss": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "^3.4.17",
+    "typescript": "latest",
+    "vite": "latest",
+    "vite-plugin-node-polyfills": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3"
+  }
+}

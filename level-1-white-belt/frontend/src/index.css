@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Sora:wght@400;600;700&family=Tangerine:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#050508] text-[#e2e2e9] antialiased min-h-screen relative overflow-x-hidden;
+    font-family: 'Sora', sans-serif;
+    /* Cyberpunk scanlines and grid */
+    background-image: 
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
+      linear-gradient(90deg, rgba(20, 184, 166, 0.03) 1px, transparent 1px),
+      linear-gradient(rgba(20, 184, 166, 0.03) 1px, transparent 1px);
+    background-size: 100% 4px, 32px 32px, 32px 32px;
+  }
+  h1, h2, h3, h4, .font-lux {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+.font-calligraphy {
+  font-family: 'Tangerine', cursive;
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+/* Cyberpunk HUD panel */
+.cyber-panel {
+  background: rgba(8, 8, 12, 0.88);
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.15), inset 0 0 10px rgba(20, 184, 166, 0.08);
+  backdrop-filter: blur(8px);
+  position: relative;
+  /* Angled corner */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+}
+
+.cyber-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #14b8a6, transparent);
+}
+
+/* Cyberpunk Input */
+.cyber-input {
+  background: rgba(3, 3, 5, 0.95);
+  border: 1px solid rgba(20, 184, 166, 0.35);
+  color: #ffffff;
+  font-family: monospace;
+  transition: all 0.3s ease;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+}
+.cyber-input:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 12px rgba(20, 184, 166, 0.25);
+  outline: none;
+}
+
+/* Cyberpunk Button */
+.cyber-button {
+  background: transparent;
+  border: 1px solid #14b8a6;
+  color: #14b8a6;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: all 0.3s ease;
+  position: relative;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+.cyber-button:hover {
+  background: #14b8a6;
+  color: #000000;
+  box-shadow: 0 0 18px #14b8a6;
+}
+.cyber-button:disabled {
+  border-color: #2a2a2f;
+  color: #55555d;
+  background: transparent;
+  box-shadow: none;
+  cursor: not-allowed;
+  clip-path: none;
+}
+
+/* Cyberpunk Sidebar */
+.cyber-sidebar {
+  background: rgba(4, 4, 6, 0.95) !important;
+  border-right: 1px solid rgba(20, 184, 166, 0.25) !important;
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.8) !important;
+}

@@ -1,0 +1,8 @@
+﻿node_modules/
+dist/
+.env
+.env.local
+target/
+.soroban/
+.DS_Store
+*.log

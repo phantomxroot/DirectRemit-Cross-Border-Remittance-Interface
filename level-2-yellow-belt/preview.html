@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="frontend/public/favicon.svg" />
+  <title>DirectRemit - Level 2 - Yellow Belt Preview</title>
+  <style>
+    :root { --bg: #050508; --accent: #14b8a6; --paper: #ececf2; --ink: #050508; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; font-family: Inter, Segoe UI, Arial, sans-serif; background: radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 25%, transparent), transparent 40rem), var(--bg); color: var(--paper); background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%), radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 25%, transparent), transparent 40rem), var(--bg); background-size: 100% 4px, 100% 100%, 100% 100%; }
+    .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 42px 0; }
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 44px; }
+    .brand { font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+    .pill { border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); border-radius: 4px; padding: 8px 12px; color: var(--accent); background: rgba(0,0,0,0.6); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+    .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: stretch; }
+    .panel { border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); background: rgba(8,8,12,0.88); border-radius: 0; padding: 28px; box-shadow: 0 24px 80px rgba(0,0,0,.5); backdrop-filter: blur(10px); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); position: relative; }
+    .panel::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); }
+    h1 { margin: 12px 0; font-size: clamp(2.1rem, 5vw, 4rem); line-height: .95; letter-spacing: 0.05em; text-transform: uppercase; }
+    p { color: color-mix(in srgb, var(--paper) 78%, transparent); line-height: 1.65; font-size: 1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .button { border: 1px solid var(--accent); border-radius: 0; background: transparent; color: var(--accent); font-weight: 800; padding: 13px 18px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); transition: all 0.3s; }
+    .button:hover { background: var(--accent); color: #000; box-shadow: 0 0 15px var(--accent); }
+    .button.secondary { border: 1px solid rgba(255,255,255,0.2); color: #ccc; }
+    .button.secondary:hover { background: rgba(255,255,255,0.1); color: #fff; box-shadow: none; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 20px; }
+    .card { border-radius: 0; padding: 16px; background: rgba(3,3,5,0.95); border: 1px solid rgba(255,255,255,0.1); min-height: 112px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); }
+    .card strong { display: block; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .status { display: grid; gap: 12px; }
+    .meter { height: 6px; background: rgba(255,255,255,0.1); border-radius: 0; overflow: hidden; }
+    .meter span { display: block; height: 100%; width: 68%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+    code { color: var(--accent); font-family: monospace; }
+    @media (max-width: 820px) { .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } .nav { align-items: flex-start; flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="nav">
+      <div class="brand">DirectRemit</div>
+      <div class="pill">Level 2 - Yellow Belt</div>
+    </nav>
+    <section class="hero">
+      <div class="panel">
+        <span class="pill">Stellar Testnet dApp</span>
+        <h1>Low cost remittance payments</h1>
+        <p>This offline preview confirms the project scaffold is visible and ready. Use dev mode after dependencies install to run the React and Soroban implementation.</p>
+        <div class="actions">
+          <a class="button" href="README.md">Open README</a>
+          <a class="button secondary" href="../README.md">Project Docs</a>
+        </div>
+        <div class="grid">
+          <div class="card"><strong>Wallet</strong><span>Connect, disconnect, balance, and transaction state surfaces.</span></div>
+          <div class="card"><strong>Contract</strong><span><code>smart contract</code> module prepared for Soroban Testnet work.</span></div>
+          <div class="card"><strong>Feedback</strong><span>Loading, pending, success, failure, and transaction hash states.</span></div>
+          <div class="card"><strong>Responsive</strong><span>Mobile-first layout for submission screenshots.</span></div>
+        </div>
+      </div>
+      <aside class="panel status">
+        <div><strong>Level Readiness</strong><p>Starter folders and files are present for this milestone.</p></div>
+        <div class="meter"><span></span></div>
+        <div class="card"><strong>Next build step</strong><span>Install dependencies, wire real wallet calls, and replace placeholder contract IDs after deployment.</span></div>
+        <div class="card"><strong>Launcher tip</strong><span>Use <code>run.bat</code> to open previews, or <code>run.bat dev1/dev2/dev3</code> for Vite servers.</span></div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
